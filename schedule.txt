@@ -1,0 +1,23 @@
+Step 1: write a C++ script that can solve a sudoku given the values through a file
+Step 2: write a python script that can create the file from an image using neural networks
+Step 3: create a script that can display the finished sudoku
+Step 4: create a database that stores all the previously solved sudokus 
+Step 5: rank the sudokus by how long they took to solve so the user sees how hard they were
+
+Week 1:
+Research sudoku solving strategies 
+finish step1 
+
+Week 2:
+Research neural networks
+Finish step 2
+
+Week 3:
+Research visualization techniques 
+Learn whatever language I'll use
+Finish step 3
+
+Week 4-6:
+Make sure at least one of the scripts matches the college board's standards
+Fix bugs
+Finish write up
