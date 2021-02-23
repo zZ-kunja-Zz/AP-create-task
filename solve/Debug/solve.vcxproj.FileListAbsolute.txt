@@ -1,0 +1,2 @@
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\Debug\solve.exe
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\Debug\solve.pdb
