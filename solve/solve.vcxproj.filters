@@ -23,6 +23,9 @@
     <Text Include="sudoku.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="sudoku1.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="optimalNumber.h">

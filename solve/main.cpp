@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include "optimalNumber.h"
+#include "oneMissing.h"
 
 using namespace std;
 
