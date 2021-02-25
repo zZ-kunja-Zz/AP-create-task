@@ -144,6 +144,10 @@
   <ItemGroup>
     <Text Include="sudoku.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="oneMissing.h" />
+    <ClInclude Include="optimalNumber.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

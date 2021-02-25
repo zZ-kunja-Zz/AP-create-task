@@ -1,37 +1,12 @@
 #include <iostream>
 #include <fstream> //file stuffs
 #include <string>
-#include <vector>
 #include <sstream>
+#include "optimalNumber.h"
 
 using namespace std;
 
-
-int optimalNumber(int board[9][9]) {
-	int h, v, x;
-	int i, j;
-	int big, num;
-	int numCon[9]; //number concentration
-	for (i = 0; i < 9; i++) {
-		numCon[i] = 0;
-	}
-	for (v = 0; v < 9; v++) {
-		for (h = 0; h < 9; h++) {
-			x = board[v][h];
-			numCon[--x]++;
-			}
-		}
-	big = numCon[0];
-	num = 1;
-	for (j = 1; j < 9; j++) {
-		if (numCon[j] > big) {
-			big = numCon[j];
-			num = num + 1;
-
-		}
-	}
-	return num;
-}
+int optimalNumber(int board[9][9]);
 
 int main() {
 	ifstream fin;
