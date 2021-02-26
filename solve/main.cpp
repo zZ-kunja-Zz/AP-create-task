@@ -7,13 +7,14 @@
 
 using namespace std;
 
-int optimalNumber(int board[9][9]);
 
 int main() {
 	ifstream fin;
 	string line;
 	int board[9][9]; //9 rows by 9 columns
 	int i, j = 0;
+	int z;
+	int opNum;
 	fin.open("sudoku.txt");
 	while (getline(fin, line)) {
 		stringstream linestream(line);
@@ -36,6 +37,29 @@ int main() {
 	*/
 	fin.close();
 
-	cout << optimalNumber(board) << endl;
+	//cout << optimalNumber(board, &z) << endl;
+	opNum = optimalNumber(board, &z);
+	switch (z) {
+	case 0:
+		break;
+	case 1:
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	case 6:
+		break;
+	case 7:
+		break;
+	case 8:
+		board[9][9] = oneMissing(board);
+		break;
+	}
 	return 0;
+
 }

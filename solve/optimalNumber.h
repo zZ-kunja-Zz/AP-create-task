@@ -2,7 +2,7 @@
  
 using namespace std;
 
-int optimalNumber(int board[9][9]) {
+int optimalNumber(int board[9][9], int *z) {
 	int h, v, x;
 	int i, j;
 	int big, num, binary = 0;
@@ -31,5 +31,6 @@ int optimalNumber(int board[9][9]) {
 
 		}
 	}
+	*z = big;
 	return num;
 }

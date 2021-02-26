@@ -2,10 +2,51 @@
 
 using namespace std;
 
-int horizontal(int i, int *board[9][9]) {
+int horizontal(int x, int board[9][9]) {
+	int num = 45;
+	int place;
+	int i;
+	for (i = 0; i < 9; i++) {
+		num -= board[x][i];
+		if (board[x][i] == 0) {
+			place = i;
+		}
+	}
+	board[x][place] = num;
+	return board[9][9];
+}
+int vertical(int x, int board[9][9]) {
+	int num = 45;
+	int place;
+	int i;
+	for (i = 0; i < 9; i++) {
+		num -= board[i][x];
+		if (board[i][x] == 0) {
+			place = i;
+		}
+	}
+	board[place][x] = num;
+	return board[9][9];
+}
+int box(int x, int board[9][9]) {
+	int num = 45;
+	int place1;
+	int place2;
+	int i, j;
+	for (i = 3 * x; i < 3 * x + 3; i++) {
+		for (j = 3 * x; j < 3 * x + 3; j++) {
+			num -= board[i][j];
+			if (board[i][j] == 0) {
+				place1 = i;
+				place2 = j;
+			}
+		}
+	}
+	board[place1][place2] = num;
+	return board[9][9];
 }
 
-void oneMissing(int *board[9][9]) {
+int oneMissing(int board[9][9]) {
 	int h, v;
 	int i, j;
 	int zeroCountHor[9];
@@ -38,8 +79,18 @@ void oneMissing(int *board[9][9]) {
 	}
 	for (i = 0; i < 9; i++) {
 		if (zeroCountHor[i] == 1) {
-			horizontal(i, ptr);
+			board[9][9] = horizontal(i, board);
 		}
 	}
+	for (i = 0; i < 9; i++) {
+		if (zeroCountVer[i] == 1) {
+			board[9][9] = vertical(i, board);
+		}
+	}
+	for (i = 0; i < 9; i++) {
+		if (zeroCountBox[i] == 1) {
+			board[9][9] = box(i, board);
+		}
+	}
+	return board[9][9];
 }
-// the way to do this is to get the 8 numbers and subtract them fron the sum of 1-9 im literally a genius 
