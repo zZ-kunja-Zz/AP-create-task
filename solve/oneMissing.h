@@ -2,6 +2,9 @@
 
 using namespace std;
 
+int horizontal(int i, int *board[9][9]) {
+}
+
 void oneMissing(int *board[9][9]) {
 	int h, v;
 	int i, j;
@@ -12,6 +15,7 @@ void oneMissing(int *board[9][9]) {
 		for (h = 0; h < 9; h++) {
 			if (board[v][h] == 0) {
 				zeroCountHor[v]++;
+			}
 		}
 	}
 	for (h = 0; h < 9; h++) {
@@ -20,15 +24,22 @@ void oneMissing(int *board[9][9]) {
 					zeroCountVer[h]++;
 			}
 		}
+	}
 	for (h = 0; h < 9; h += 3) {
 		for (v = 0; v < 9; v += 3) {
 			for (i = h; i < h + 3; i++) {
-				for (j = v; j < v + 3; j++){
+				for (j = v; j < v + 3; j++) {
 					if (board[v][h] == 0) {
-						zeroCountBox[h % 3 + 3 * (v % 3)];
+							zeroCountBox[h % 3 + 3 * (v % 3)]++;
 					}
-					}
+				}
 			}
 		}
+	}
+	for (i = 0; i < 9; i++) {
+		if (zeroCountHor[i] == 1) {
+			horizontal(i, ptr);
+		}
+	}
 }
 // the way to do this is to get the 8 numbers and subtract them fron the sum of 1-9 im literally a genius 
