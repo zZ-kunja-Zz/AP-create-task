@@ -57,7 +57,7 @@ int main() {
 	case 7:
 		break;
 	case 8:
-		board[9][9] = oneMissing(board);
+		board = oneMissing(board);
 		break;
 	}
 	return 0;

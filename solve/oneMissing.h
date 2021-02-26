@@ -49,9 +49,9 @@ int box(int x, int board[9][9]) {
 int oneMissing(int board[9][9]) {
 	int h, v;
 	int i, j;
-	int zeroCountHor[9];
-	int zeroCountVer[9];
-	int zeroCountBox[9];
+	int zeroCountHor[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	int zeroCountVer[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	int zeroCountBox[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	for (v = 0; v < 9; v++) {
 		for (h = 0; h < 9; h++) {
 			if (board[v][h] == 0) {
