@@ -19,13 +19,9 @@ int optimalNumber(int **board, int *z) {
 		}
 	}
 	num = 0;
-	for (j = 1; j < 9; j++) {
-		if (numCon[j] < 9 && binary == 0) {
-			big = numCon[j];
-			num = j + 1;
-			binary = 1;
-		}
-		if (numCon[j] > big) {
+	big = 0;
+	for (j = 0; j < 9; j++) {
+		if (numCon[j] > big && numCon[j] != 9) {
 			big = numCon[j];
 			num = j + 1;
 

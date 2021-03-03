@@ -1,4 +1,6 @@
 //finished 3/17 author: Seyoun Vishakan
+//sudoku.txt regular easy sudoku
+//sudoku1.txt used for testing the oneMissing function
 #include <iostream>
 #include <fstream> //file stuffs
 #include <string>

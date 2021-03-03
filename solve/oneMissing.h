@@ -4,7 +4,7 @@ using namespace std;
 
 void horizontal(int x, int **board) {
 	int num = 45;
-	int place;
+	int place = 10;
 	int i;
 	for (i = 0; i < 9; i++) {
 		num -= board[x][i];
@@ -12,11 +12,13 @@ void horizontal(int x, int **board) {
 			place = i;
 		}
 	}
-	board[x][place] = num;
+	if (place != 10) {
+		board[x][place] = num;
+	}
 }
 void vertical(int x, int **board) {
 	int num = 45;
-	int place;
+	int place = 10;
 	int i;
 	for (i = 0; i < 9; i++) {
 		num -= board[i][x];
@@ -24,11 +26,13 @@ void vertical(int x, int **board) {
 			place = i;
 		}
 	}
-	board[place][x] = num;
+	if (place != 10) {
+		board[place][x] = num;
+	}
 }
 void box(int x, int **board) {
 	int num = 45;
-	int place1;
+	int place1 = 10;
 	int place2;
 	int i, j;
 	for (i = 3 * x; i < 3 * x + 3; i++) {
@@ -40,7 +44,9 @@ void box(int x, int **board) {
 			}
 		}
 	}
-	board[place1][place2] = num;
+	if (place1 != 10) {
+		board[place1][place2] = num;
+	}
 }
 
 void oneMissing(int **board) {
