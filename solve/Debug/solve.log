@@ -1,3 +1,3 @@
 ﻿  main.cpp
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(15,6): warning C4101: 'i': unreferenced local variable
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(21,6): warning C4101: 'temp': unreferenced local variable
   solve.vcxproj -> C:\Users\seyou\Documents\GitHub\AP-create-task\solve\Debug\solve.exe

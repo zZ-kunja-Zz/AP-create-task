@@ -1,3 +1,4 @@
+//finished 3/17 author: Seyoun Vishakan
 #include <iostream>
 #include <fstream> //file stuffs
 #include <string>
@@ -11,8 +12,13 @@ using namespace std;
 int main() {
 	ifstream fin;
 	string line;
-	int board[9][9]; //9 rows by 9 columns
+	int** board;
+	board = new int* [10];
+	for (int i = 0; i < 10; ++i) {
+		board[i] = new int[10];
+	}
 	int i, j = 0;
+	int temp;
 	int z;
 	int opNum;
 	fin.open("sudoku.txt");
@@ -57,9 +63,14 @@ int main() {
 	case 7:
 		break;
 	case 8:
-		board = oneMissing(board);
+		oneMissing(board);
 		break;
 	}
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			cout << board[i][j] << ' ';
+		}
+		cout << endl;
+	}
 	return 0;
-
 }

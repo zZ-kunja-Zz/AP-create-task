@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int horizontal(int x, int board[9][9]) {
+void horizontal(int x, int **board) {
 	int num = 45;
 	int place;
 	int i;
@@ -13,9 +13,8 @@ int horizontal(int x, int board[9][9]) {
 		}
 	}
 	board[x][place] = num;
-	return board[9][9];
 }
-int vertical(int x, int board[9][9]) {
+void vertical(int x, int **board) {
 	int num = 45;
 	int place;
 	int i;
@@ -26,9 +25,8 @@ int vertical(int x, int board[9][9]) {
 		}
 	}
 	board[place][x] = num;
-	return board[9][9];
 }
-int box(int x, int board[9][9]) {
+void box(int x, int **board) {
 	int num = 45;
 	int place1;
 	int place2;
@@ -43,10 +41,9 @@ int box(int x, int board[9][9]) {
 		}
 	}
 	board[place1][place2] = num;
-	return board[9][9];
 }
 
-int oneMissing(int board[9][9]) {
+void oneMissing(int **board) {
 	int h, v;
 	int i, j;
 	int zeroCountHor[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -79,18 +76,18 @@ int oneMissing(int board[9][9]) {
 	}
 	for (i = 0; i < 9; i++) {
 		if (zeroCountHor[i] == 1) {
-			board[9][9] = horizontal(i, board);
+			horizontal(i, board);
 		}
 	}
 	for (i = 0; i < 9; i++) {
 		if (zeroCountVer[i] == 1) {
-			board[9][9] = vertical(i, board);
+			vertical(i, board);
 		}
 	}
 	for (i = 0; i < 9; i++) {
 		if (zeroCountBox[i] == 1) {
-			board[9][9] = box(i, board);
+			box(i, board);
 		}
 	}
-	return board[9][9];
+
 }
