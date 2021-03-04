@@ -26,12 +26,18 @@
     <Text Include="sudoku1.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="sudokuw.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="optimalNumber.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="oneMissing.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rowFindThing.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,12 +1,14 @@
 //finished 3/17 author: Seyoun Vishakan
 //sudoku.txt regular easy sudoku
 //sudoku1.txt used for testing the oneMissing function
+//sudokuw.txt this is where the finished sudoku will be sent
 #include <iostream>
 #include <fstream> //file stuffs
 #include <string>
 #include <sstream>
 #include "optimalNumber.h"
 #include "oneMissing.h"
+#include "rowFindThing.h"
 
 using namespace std;
 
@@ -47,6 +49,7 @@ int main() {
 
 	//cout << optimalNumber(board, &z) << endl;
 	opNum = optimalNumber(board, &z);
+	oneMissing(board);
 	switch (z) {
 	case 0:
 		break;
@@ -65,7 +68,6 @@ int main() {
 	case 7:
 		break;
 	case 8:
-		oneMissing(board);
 		break;
 	}
 	for (i = 0; i < 9; i++) {
