@@ -1,7 +1,9 @@
 //finished 3/17 author: Seyoun Vishakan
 //sudoku.txt regular easy sudoku
 //sudoku1.txt used for testing the oneMissing function
+//sudoku2.txt used for testing the rowfindthing function
 //sudokuw.txt this is where the finished sudoku will be sent
+//board[x][y] x is vertical y is horizontal
 #include <iostream>
 #include <fstream> //file stuffs
 #include <string>
@@ -48,6 +50,8 @@ int main() {
 	fin.close();
 
 	//cout << optimalNumber(board, &z) << endl;
+	rowFindThing(1, board);
+	/*
 	opNum = optimalNumber(board, &z);
 	oneMissing(board);
 	switch (z) {
@@ -70,6 +74,7 @@ int main() {
 	case 8:
 		break;
 	}
+	*/
 	for (i = 0; i < 9; i++) {
 		for (j = 0; j < 9; j++) {
 			cout << board[i][j] << ' ';
