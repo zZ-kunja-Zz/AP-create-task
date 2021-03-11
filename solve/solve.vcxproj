@@ -143,7 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="sudoku.txt" />
+    <Text Include="sudoku0.txt" />
     <Text Include="sudoku1.txt" />
+    <Text Include="sudoku2.txt" />
     <Text Include="sudokuw.txt" />
   </ItemGroup>
   <ItemGroup>

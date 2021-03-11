@@ -1,5 +1,6 @@
 //finished 3/17 author: Seyoun Vishakan
 //sudoku.txt regular easy sudoku
+//sudoku0.txt copy paste into new sudoku txts since its just a blank sudoku
 //sudoku1.txt used for testing the oneMissing function
 //sudoku2.txt used for testing the rowfindthing function
 //sudokuw.txt this is where the finished sudoku will be sent
@@ -27,7 +28,7 @@ int main() {
 	int temp;
 	int z;
 	int opNum;
-	fin.open("sudoku.txt");
+	fin.open("sudoku2.txt");
 	while (getline(fin, line)) {
 		stringstream linestream(line);
 		string data;

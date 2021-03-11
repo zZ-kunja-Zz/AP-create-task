@@ -16,6 +16,7 @@ void rowFindThing(int x, int** board) {
 				for (j = v; j < v + 3; j++) {
 					if (board[v][h] == x) {
 						xInBox[h % 3 + 3 * (v % 3)]++;
+						cout << h % 3 + 3 * (v % 3) << endl;
 					}
 				}
 			}
