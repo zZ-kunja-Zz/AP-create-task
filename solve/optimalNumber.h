@@ -2,7 +2,7 @@
  
 using namespace std;
 
-int optimalNumber(int **board, int *z) {
+void optimalNumber(int** board, int* repList) {
 	int h, v, x;
 	int i, j;
 	int big, num, binary = 0;
@@ -18,15 +18,7 @@ int optimalNumber(int **board, int *z) {
 			}
 		}
 	}
-	num = 0;
-	big = 0;
-	for (j = 0; j < 9; j++) {
-		if (numCon[j] > big && numCon[j] != 9) {
-			big = numCon[j];
-			num = j + 1;
-
-		}
+	for (i = 0; i < 9; i++) {
+		repList[i] = numCon[i];
 	}
-	*z = big;
-	return num;
 }

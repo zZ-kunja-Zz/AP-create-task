@@ -5,27 +5,31 @@ using namespace std;
 
 void rowFindThing(int x, int** board) {
 	int h, v;
-	int i, j, k;
+	int i, j, k, n;
 	int xInBox[9];
 	int counter;
 	int change1, change2;
 	int a, b;
+	for (i = 0; i < 9; i++) {
+		xInBox[i] = 0;
+	}
 	for (h = 0; h < 9; h += 3) {
+
 		for (v = 0; v < 9; v += 3) {
 			for (i = h; i < h + 3; i++) {
 				for (j = v; j < v + 3; j++) {
-					if (board[v][h] == x) {
-						xInBox[h % 3 + 3 * (v % 3)]++;
-						cout << h % 3 + 3 * (v % 3) << endl;
+					if (board[j][i] == x) {
+						xInBox[i / 3 + 3 * (j / 3)]++;
 					}
 				}
 			}
 		}
 	}
-	for (j = 1; j < 4; j++) {
+
+	for (j = 0; j < 3; j++) {
 		counter = 0;
-		for (i = 1; i < 4; i++) {
-			if (xInBox[i * j - 1] == 1) {
+		for (i = 0; i < 3; i++) {
+			if (xInBox[3 * j + i] == 1) {
 				counter++;
 			}
 			else {
@@ -34,28 +38,29 @@ void rowFindThing(int x, int** board) {
 			}
 		}
 		if (counter == 2) {
-			a = 6 + 9 * (j - 1);
-			for (k = 0; k < 3; k++) {
-				if (xInBox[k] == 1) {
-					for (v = 0; v < 3; v++) {
-						for (h = 0; h < 3; h++) {
-							if (board[v][h] == x) {
-								a -= v + 1;
-							}
+			a = 5;
+				for (v = 0; v < 3; v++) {
+					for (h = 0; h < 9; h++) {
+						//cout << (change1 * 3 + v) % 9 << ' ' << h << endl;
+						if (board[(change1 * 3 + v) % 9][h] == x) {
+							
+							a -= v + 1;
 						}
 					}
 				}
-			}
-			b = 6 + 9 * (j - 1);
-			for (k = 0; k < 2; k++) {
-				for (v = 0; v < 3; v++) {
+			b = 5;
+				for (v = 0; v < 9; v++) {
 					for (h = 0; h < 3; h++) {
-						if (board[(v + 3 * k + 3 * (change1 - 1)) % 9][h + 3 * (change2 - 1)] == x) {
+						//cout << v << ' ' << (change2 * 3 + h) % 9 << endl;
+						if (board[v][(change2 * 3 + h) % 9] == x) {
+							
 							b -= h + 1;
 						}
 					}
 				}
-			}
+			//cout << a << ' ' << b << endl;
+			a += 3 * change1;
+			b += 3 * change2;
 			board[a][b] = x;
 		}
 	}

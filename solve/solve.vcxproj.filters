@@ -18,6 +18,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="backtrack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="sudoku.txt">
@@ -44,6 +47,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="rowFindThing.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rowScan.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

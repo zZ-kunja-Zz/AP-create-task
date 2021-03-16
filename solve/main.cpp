@@ -26,9 +26,11 @@ int main() {
 	}
 	int i, j = 0;
 	int temp;
-	int z;
+	int repList[9];
 	int opNum;
-	fin.open("sudoku2.txt");
+	int timer = 0;
+	int finished = 0;
+	fin.open("sudoku.txt");
 	while (getline(fin, line)) {
 		stringstream linestream(line);
 		string data;
@@ -51,31 +53,52 @@ int main() {
 	fin.close();
 
 	//cout << optimalNumber(board, &z) << endl;
-	rowFindThing(1, board);
+	//rowFindThing(1, board);
 	/*
-	opNum = optimalNumber(board, &z);
-	oneMissing(board);
-	switch (z) {
-	case 0:
-		break;
-	case 1:
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	case 4:
-		break;
-	case 5:
-		break;
-	case 6:
-		break;
-	case 7:
-		break;
-	case 8:
-		break;
+	while (finished == 0 && timer < 100) {
+		timer++;
+		optimalNumber(board, repList);
+		for (i = 0; i < 9; i++) {
+			oneMissing(board);
+			switch (repList[i]) {
+			case 1:
+				finished = 0;
+				break;
+			case 2:
+				finished = 0;
+				break;
+			case 3:
+				finished = 0;
+				break;
+			case 4:
+				finished = 0;
+				rowFindThing(repList[i], board);
+				break;
+			case 5:
+				finished = 0;
+				rowFindThing(repList[i], board);
+				break;
+			case 6:
+				finished = 0;
+				rowFindThing(repList[i], board);
+				break;
+			case 7:
+				finished = 0;
+				rowFindThing(repList[i], board);
+				break;
+			case 8:
+				finished = 0;
+				rowFindThing(repList[i], board);
+				break;
+			case 9:
+				finished = 1;
+				break;
+
+			}
+		}
 	}
 	*/
+
 	for (i = 0; i < 9; i++) {
 		for (j = 0; j < 9; j++) {
 			cout << board[i][j] << ' ';
