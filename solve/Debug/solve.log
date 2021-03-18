@@ -1,9 +1,5 @@
 ﻿  main.cpp
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\optimalNumber.h(7,9): warning C4101: 'j': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\optimalNumber.h(8,11): warning C4101: 'num': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\optimalNumber.h(8,6): warning C4101: 'big': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\rowFindThing.h(8,12): warning C4101: 'k': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\rowFindThing.h(8,15): warning C4101: 'n': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(30,6): warning C4101: 'opNum': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(28,6): warning C4101: 'temp': unreferenced local variable
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(167,6): warning C4101: 'repList': unreferenced local variable
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(168,6): warning C4101: 'opNum': unreferenced local variable
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(166,6): warning C4101: 'temp': unreferenced local variable
   solve.vcxproj -> C:\Users\seyou\Documents\GitHub\AP-create-task\solve\Debug\solve.exe

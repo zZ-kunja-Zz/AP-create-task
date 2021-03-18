@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="backtrack.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,12 +147,6 @@
     <Text Include="sudoku1.txt" />
     <Text Include="sudoku2.txt" />
     <Text Include="sudokuw.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="oneMissing.h" />
-    <ClInclude Include="optimalNumber.h" />
-    <ClInclude Include="rowFindThing.h" />
-    <ClInclude Include="rowScan.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

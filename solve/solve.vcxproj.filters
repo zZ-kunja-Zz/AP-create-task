@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="backtrack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="sudoku.txt">
@@ -38,19 +35,5 @@
     <Text Include="sudoku0.txt">
       <Filter>Source Files</Filter>
     </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="optimalNumber.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="oneMissing.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rowFindThing.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rowScan.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
