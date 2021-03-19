@@ -10,10 +10,9 @@
 #include <string>
 #include <sstream>
 
-
 using namespace std;
 
-int isLegal(int** board, int** board01) {
+int isLegal(int** board) {
 	int h, v;
 	int i, j;
 	int test;
@@ -70,13 +69,14 @@ int isLegal(int** board, int** board01) {
 	return 1;
 }
 
-void backtrack(int** board, int** board01, int** board2) {
+void backtrack(int** board, int** board01) {
 	int v, h;
 	int i, j;
 	int counter = 0;
 	int emptyTiles[81];
 	int solved = 0;
 	int temp;
+	int iterations = 0;
 
 	for (v = 0; v < 9; v++) {
 		for (h = 0; h < 9; h++) {
@@ -86,11 +86,6 @@ void backtrack(int** board, int** board01, int** board2) {
 			else {
 				board01[v][h] = 1;
 			}
-		}
-	}
-	for (v = 0; v < 9; v++) {
-		for (h = 0; h < 9; h++) {
-			board2[v][h] = board[v][h];
 		}
 	}
 	for (i = 0; i < 81; i++) {
@@ -106,21 +101,18 @@ void backtrack(int** board, int** board01, int** board2) {
 			break;
 		}
 		temp = emptyTiles[current];
-		if (board2[temp / 9][temp % 9] == 9) {
-			board2[temp / 9][temp % 9] = 0;
+		if (board[temp / 9][temp % 9] == 9) {
+			board[temp / 9][temp % 9] = 0;
 			current--;
 			continue;
 		}
-		board2[temp / 9][temp % 9]++;
-		if (isLegal(board2, board01)) {
+		board[temp / 9][temp % 9]++;
+		if (isLegal(board)) {
 			current++;
 		}
+		iterations++;
 	}
-	for (v = 0; v < 9; v++) {
-		for (h = 0; h < 9; h++) {
-			board[v][h] = board2[v][h];
-		}
-	}
+	cout << iterations << " iterations" << endl << endl;
 
 }
 
@@ -138,18 +130,13 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		board01[i] = new int[10];
 	}
-	int** board2;
-	board2 = new int* [10];
-	for (int i = 0; i < 10; i++) {
-		board2[i] = new int[10];
-	}
 	int i, j = 0;
 	int temp;
 	int repList[9];
 	int opNum;
 	int timer = 0;
 	int finished = 0;
-	fin.open("sudoku1.txt");
+	fin.open("sudoku.txt");
 	while (getline(fin, line)) {
 		stringstream linestream(line);
 		string data;
@@ -180,7 +167,7 @@ int main() {
 	}
 	cout << endl;
 	
-	backtrack(board, board01, board2);
+	backtrack(board, board01);
 
 	for (i = 0; i < 9; i++) {
 		for (j = 0; j < 9; j++) {
@@ -189,7 +176,16 @@ int main() {
 		cout << endl;
 	}
 	ofstream fout;
-	string line;
-
+	line = "";
+	fout.open("sudokuw.txt");
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			line += to_string(board[i][j]);
+			line += " ";
+		}
+		line += "\n";
+	}
+	fout << line << endl;
+	fout.close();
 	return 0;
 }
