@@ -1,8 +1,8 @@
-//finished 3/17 author: Seyoun Vishakan
+// 3-19-2021 author: Seyoun Vishakan
 //sudoku.txt regular easy sudoku
 //sudoku0.txt copy paste into new sudoku txts since its just a blank sudoku
-//sudoku1.txt used for testing the oneMissing function
-//sudoku2.txt used for testing the rowfindthing function
+//sudoku1.txt used for testing 
+//sudoku2.txt used for testing
 //sudokuw.txt this is where the finished sudoku will be sent
 //board[x][y] x is vertical y is horizontal
 #include <iostream>
@@ -24,13 +24,11 @@ int isLegal(int** board, int** board01) {
 		}
 		for (h = 0; h < 9; h++) {
 			if (board[v][h] != 0) {
-				test = board[v][h];
-				listForTest[--test]++;
-			}
-		}
-		for (i = 0; i < 9; i++) {
-			if (listForTest[i] > 1) {
-				return 0;
+				test = board[v][h] - 1;
+				listForTest[test]++;
+				if (listForTest[test] > 1) {
+					return 0;
+				}
 			}
 		}
 
@@ -41,15 +39,14 @@ int isLegal(int** board, int** board01) {
 		}
 		for (v = 0; v < 9; v++) {
 			if (board[v][h] != 0) {
-				test = board[v][h];
-				listForTest[--test]++;
+				test = board[v][h] - 1;
+				listForTest[test]++;
+				if (listForTest[test] > 1) {
+					return 0;
+				}
 			}
 		}
-		for (i = 0; i < 9; i++) {
-			if (listForTest[i] > 1) {
-				return 0;
-			}
-		}
+
 	}
 	for (v = 0; v < 3; v++) {
 		for (h = 0; h < 3; h++) {
@@ -59,14 +56,12 @@ int isLegal(int** board, int** board01) {
 			for (i = 0; i < 3; i++) {
 				for (j = 0; j < 3; j++) {
 					if (board[3 * v + i][3 * h + j] != 0) {
-						test = board[3 * v + i][3 * h + j];
-						listForTest[--test]++;
+						test = board[3 * v + i][3 * h + j] - 1;
+						listForTest[test]++;
+						if (listForTest[test] > 1) {
+							return 0;
+						}
 					}
-				}
-			}
-			for (i = 0; i < 9; i++) {
-				if (listForTest[i] > 1) {
-					return 0;
 				}
 			}
 		}
@@ -104,13 +99,6 @@ void backtrack(int** board, int** board01, int** board2) {
 			counter++;
 		}
 	}
-	for (i = 0; i < 9; i++) {
-		for (j = 0; j < 9; j++) {
-			cout << board2[i][j] << ' ';
-		}
-		cout << endl;
-	}
-	cout << endl;
 	int current = 0;
 	while (solved != 1) {
 		if (current == counter) {
@@ -127,13 +115,6 @@ void backtrack(int** board, int** board01, int** board2) {
 		if (isLegal(board2, board01)) {
 			current++;
 		}
-		for (i = 0; i < 9; i++) {
-			for (j = 0; j < 9; j++) {
-				cout << board2[i][j] << ' ';
-			}
-			cout << endl;
-		}
-		cout << endl;
 	}
 	for (v = 0; v < 9; v++) {
 		for (h = 0; h < 9; h++) {
@@ -207,5 +188,8 @@ int main() {
 		}
 		cout << endl;
 	}
+	ofstream fout;
+	string line;
+
 	return 0;
 }
