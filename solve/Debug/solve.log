@@ -1,6 +1,6 @@
 ﻿  main.cpp
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(74,9): warning C4101: 'j': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(135,6): warning C4101: 'repList': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(136,6): warning C4101: 'opNum': unreferenced local variable
-C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(134,6): warning C4101: 'temp': unreferenced local variable
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(85,9): warning C4101: 'j': unreferenced local variable
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(148,6): warning C4101: 'repList': unreferenced local variable
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(149,6): warning C4101: 'opNum': unreferenced local variable
+C:\Users\seyou\Documents\GitHub\AP-create-task\solve\main.cpp(147,6): warning C4101: 'temp': unreferenced local variable
   solve.vcxproj -> C:\Users\seyou\Documents\GitHub\AP-create-task\solve\Debug\solve.exe

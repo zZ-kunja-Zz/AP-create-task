@@ -12,6 +12,17 @@
 
 using namespace std;
 
+void printBoard(int** board) {
+	int i, j;
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			cout << board[i][j] << ' ';
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
+
 int isLegal(int** board) {
 	int h, v;
 	int i, j;
@@ -118,8 +129,10 @@ void backtrack(int** board, int** board01) {
 
 
 int main() {
+	//string is the info that will be read from the file and ifstream is for reading the file
 	ifstream fin;
 	string line;
+	//defining 2d array here 
 	int** board;
 	board = new int* [10];
 	for (int i = 0; i < 10; i++) {
@@ -136,6 +149,7 @@ int main() {
 	int opNum;
 	int timer = 0;
 	int finished = 0;
+	//reading file
 	fin.open("sudoku.txt");
 	while (getline(fin, line)) {
 		stringstream linestream(line);
@@ -149,7 +163,7 @@ int main() {
 		j++;
 	}
 	/*
-	//this is a way for me to test what the sudoku values are
+	//this is a way for me to see what the board looks like
 	for (j = 0; j < 9; j++) {
 		for (i = 0; i < 9; i++) {
 			cout << board[j][i] << endl;
@@ -158,23 +172,16 @@ int main() {
 	*/
 	fin.close();
 
+	//print board
+	printBoard(board);
 	
-	for (i = 0; i < 9; i++) {
-		for (j = 0; j < 9; j++) {
-			cout << board[i][j] << ' ';
-		}
-		cout << endl;
-	}
-	cout << endl;
-	
+	//solving
 	backtrack(board, board01);
 
-	for (i = 0; i < 9; i++) {
-		for (j = 0; j < 9; j++) {
-			cout << board[i][j] << ' ';
-		}
-		cout << endl;
-	}
+	printBoard(board);
+
+	//writing to file
+
 	ofstream fout;
 	line = "";
 	fout.open("sudokuw.txt");
